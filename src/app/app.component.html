@@ -1,20 +1,21 @@
 <div class="container">
   <div class="row">
-      <p class="pt-3">Coverage:</p>
+    <h3 class="pt-3">Coverage:</h3>
   </div>
   <div class="row">
-    <app-coverage class="col-sm-2 "[premium]="premium" *ngFor="let premium of premiums; index as i"
-     (premiumAmount)="onCoverage($event,i)">
-     <div class="checked-circle" *ngIf="flagPremium[i]; else name">
-<span class="check-circle"></span>
-     </div>
-     <ng-template #name>
-<div class="unchecked-circle">
-  <span class="check-circle"></span>
-</div>
-     </ng-template>
-    
-    
+    <app-coverage class="col-sm-2 " [premium]="premium" *ngFor="let premium of premiums; index as i"
+      (premiumAmount)="onCoverage($event,i)">
+      <div class="col-12 quote-card-overlay text-center mds-quote-coverage">
+      </div>
+      <div class="checked-circle" *ngIf="flagPremium[i]; else name">
+        <div class="coller mx-auto"> Selected </div>
+        <span class="check-circle"></span>
+      </div>
+      <ng-template #name>
+        <div class="unchecked-circle">
+          <span class="check-circle"></span>
+        </div>
+      </ng-template>
     </app-coverage>
 
   </div>
@@ -22,14 +23,14 @@
 
 <div class="container">
   <div class="row">
-      <h3 class="pt-5">
-          Add On Coverage:
-        </h3>
+    <h3 class="pt-5">
+      Add On Coverage:
+    </h3>
   </div>
   <div class="row">
-    
-    <app-premium class="col-sm-6"[addOnPremium]="addOnPremium" *ngFor="let addOnPremium of addOnPremiums"
-     (addOnPremiumAmount)="onAddOn($event)"></app-premium>
+
+    <app-premium class="col-sm-6" [addOnPremium]="addOnPremium" *ngFor="let addOnPremium of addOnPremiums"
+      (addOnPremiumAmount)="onAddOn($event)"></app-premium>
   </div>
 </div>
 
@@ -38,9 +39,8 @@
   <div class="row">
     <div class="col-sm-12 premium-container">
       <div style="padding: 25px 0px;">
-          Total Amount = {{ totalAmount }}      
+        Total Amount = {{ totalAmount }}
       </div>
     </div>
   </div>
 </div>
-

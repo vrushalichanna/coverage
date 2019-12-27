@@ -1,5 +1,6 @@
-.premium-container{
-    border-top: 5px solid;
-    background-color: #38D430;
-    margin-top: 15px;
+.total-btn{
+    background-color: transparent;
+    color: #38D430;
+    border-color: 5px solid #38D430;
+    border: 5px solid;
 }
