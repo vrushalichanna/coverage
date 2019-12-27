@@ -1,0 +1,17 @@
+.inner-div{
+    border-top: solid 8px #38D430;
+    background-color: #D5F3CF;
+    height: 320px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+  
+
+  .info-Icon{
+    color: #38D430;
+   
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+  
