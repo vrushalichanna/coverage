@@ -10,6 +10,7 @@ export class AppComponent {
   lastPremium=0;
   lastAddOnPremium=0;
   flagPremium:boolean []= [false,false,false,false];
+  flagCovrage:boolean [] = [false,false]
 
   mobileNumbers:string[]=['9857461478','8874122145','7456321890','85213469','7412365890'];
 
@@ -29,10 +30,18 @@ export class AppComponent {
     }
   }
 
-  onAddOn(addOnPremium:number){
+  onAddOn(addOnPremium:number, index:number){
     this.totalAmount-=this.lastAddOnPremium;
     this.totalAmount+=addOnPremium;
     this.lastAddOnPremium=addOnPremium;
+    for(let i=0;i<this.flagCovrage.length;i++){
+      if(index == i){
+        this.flagCovrage[i] = true;
+      }
+      else{
+        this.flagCovrage[i] = false;
+       }
+    }
   }
 
 }

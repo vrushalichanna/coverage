@@ -16,6 +16,7 @@
           <span class="check-circle"></span>
         </div>
       </ng-template>
+      
     </app-coverage>
 
   </div>
@@ -29,8 +30,17 @@
   </div>
   <div class="row">
 
-    <app-premium class="col-sm-6" [addOnPremium]="addOnPremium" *ngFor="let addOnPremium of addOnPremiums"
-      (addOnPremiumAmount)="onAddOn($event)"></app-premium>
+    <app-premium class="col-sm-6" [addOnPremium]="addOnPremium" *ngFor="let addOnPremium of addOnPremiums ; index as i"  
+      (addOnPremiumAmount)="onAddOn($event)">
+      <div class="checked-circle" *ngIf="flagCovrage[i]; else add">
+      <span class="check-circle"></span>
+    </div>
+    <ng-template #add>
+      <div class="unchecked-circle">
+        <span class="check-circle"></span>
+      </div>
+    </ng-template>
+    </app-premium>
   </div>
 </div>
 
